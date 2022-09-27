@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        width: 100%;
+        display: grid;
+        place-content: center;
+      }
+      .phone {
+        position: relative;
+        border: 8px solid black;
+        border-radius: 40px;
+        height: 600px;
+        width: 300px;
+        background: #ccefff;
+        box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3),
+          0 15px 12px rgba(0, 0, 0, 0.22);
+      }
+
+      .layer-1 {
+        position: absolute;
+        z-index: 1;
+        background: rgba(255, 255, 255, 0);
+        height: 450px;
+        width: 80px;
+        bottom: 0;
+        right: 60px;
+      }
+      .layer-2 {
+        position: absolute;
+        z-index: 2;
+        background: rgba(255, 255, 255, 0);
+
+        height: 450px;
+        width: 80px;
+        bottom: 0;
+        left: 60px;
+      }
+      .layer-3 {
+        position: absolute;
+        z-index: 3;
+        background: papayawhip;
+        height: 400px;
+        width: 220px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        bottom: 0;
+        box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3),
+          0 15px 12px rgba(0, 0, 0, 0.22);
+      }
+      .layer-4 {
+        position: absolute;
+        z-index: 4;
+        background: rgba(255, 255, 255, 0);
+
+        height: 350px;
+        width: 80px;
+        bottom: 0;
+        left: 40px;
+      }
+      .layer-5 {
+        position: absolute;
+        z-index: 5;
+        position: absolute;
+        z-index: 4;
+        background: pink;
+        height: 300px;
+        width: 220px;
+        left: 0;
+        border-radius: 0 0 0 32px;
+        bottom: 0;
+        box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3),
+          0 15px 12px rgba(0, 0, 0, 0.22);
+      }
+      .layer-6 {
+        position: absolute;
+        z-index: 6;
+        background: rgba(255, 255, 255, 0);
+
+        height: 250px;
+        width: 80px;
+        bottom: 0;
+        right: 40px;
+      }
+      .layer-7 {
+        position: absolute;
+        z-index: 7;
+        background: peachpuff;
+        height: 200px;
+        width: 150px;
+        right: 0;
+        border-radius: 0 0 32px 0;
+        bottom: 0;
+        box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3),
+          0 15px 12px rgba(0, 0, 0, 0.22);
+      }
+      .layer-8 {
+        position: absolute;
+        z-index: 8;
+        position: absolute;
+        z-index: 7;
+        background: lightcoral;
+        height: 120px;
+        width: 150px;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+        bottom: 0;
+        box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3),
+          0 15px 12px rgba(0, 0, 0, 0.22);
+      }
+      .layer-9 {
+        position: absolute;
+        z-index: 9;
+        background: lightgreen;
+        height: 90px;
+        width: 120px;
+        left: 0;
+        bottom: 0;
+        border-radius: 0 0 0 32px;
+        box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3),
+          0 15px 12px rgba(0, 0, 0, 0.22);
+      }
+      .layer-10 {
+        position: absolute;
+        z-index: 10;
+        background: lightgreen;
+        height: 90px;
+        width: 120px;
+        right: 0;
+        bottom: 0;
+        border-radius: 0 0 32px 0;
+        box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3),
+          0 15px 12px rgba(0, 0, 0, 0.22);
+      }
+      .left-ear--outer {
+        background: white;
+        border-radius: 90%;
+        width: 20px;
+        height: 50px;
+        position: absolute;
+        left: 10px;
+      }
+      .left-ear--inner {
+        background: pink;
+        border-radius: 90%;
+        width: 10px;
+        height: 50px;
+        position: absolute;
+        left: 15px;
+        top: 8px;
+      }
+      .right-ear--outer {
+        background: white;
+        border-radius: 90%;
+        width: 20px;
+        height: 50px;
+        position: absolute;
+        right: 10px;
+      }
+      .right-ear--inner {
+        background: pink;
+        border-radius: 90%;
+        width: 10px;
+        height: 50px;
+        position: absolute;
+        right: 15px;
+        top: 8px;
+      }
+      .head {
+        background: white;
+        border-radius: 50%;
+        height: 80px;
+        width: 100%;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        position: absolute;
+        top: 30px;
+      }
+      .head__eye {
+        background: gray;
+        border-radius: 50%;
+        width: 4px;
+        height: 4px;
+        position: absolute;
+        top: 15px;
+      }
+      .head__eye--left {
+        left: 30px;
+      }
+
+      .head__eye--right {
+        right: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="phone">
+      <!-- draw -->
+      <div class="layer-1">
+        <div class="left-ear--outer"></div>
+        <div class="left-ear--inner"></div>
+        <div class="right-ear--outer"></div>
+        <div class="right-ear--inner"></div>
+        <div class="head">
+          <div class="head__eye head__eye--left"></div>
+          <div class="head__eye head__eye--right"></div>
+        </div>
+      </div>
+      <div class="layer-2">
+        <div class="left-ear--outer"></div>
+        <div class="left-ear--inner"></div>
+        <div class="right-ear--outer"></div>
+        <div class="right-ear--inner"></div>
+        <div class="head">
+          <div class="head__eye head__eye--left"></div>
+          <div class="head__eye head__eye--right"></div>
+        </div>
+      </div>
+      <div class="layer-3"></div>
+      <div class="layer-4">
+        <div class="left-ear--outer"></div>
+        <div class="left-ear--inner"></div>
+        <div class="right-ear--outer"></div>
+        <div class="right-ear--inner"></div>
+        <div class="head">
+          <div class="head__eye head__eye--left"></div>
+          <div class="head__eye head__eye--right"></div>
+        </div>
+      </div>
+      <div class="layer-5"></div>
+      <div class="layer-6">
+        <div class="left-ear--outer"></div>
+        <div class="left-ear--inner"></div>
+        <div class="right-ear--outer"></div>
+        <div class="right-ear--inner"></div>
+        <div class="head">
+          <div class="head__eye head__eye--left"></div>
+          <div class="head__eye head__eye--right"></div>
+        </div>
+      </div>
+      <div class="layer-7"></div>
+      <div class="layer-8"></div>
+      <div class="layer-9"></div>
+      <div class="layer-10"></div>
+    </div>
+  </body>
+</html>
